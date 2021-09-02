@@ -40,15 +40,15 @@ export default function TxSendSample() {
       })
       .catch((error) => {
         if (error instanceof UserDenied) {
-          setTxError('User Denied');
+          setTxError('Deny 버튼을 누름');
         } else if (error instanceof CreateTxFailed) {
-          setTxError('Create Tx Failed: ' + error.message);
+          setTxError('트랜잭션 생성 실패: ' + error.message);
         } else if (error instanceof TxFailed) {
-          setTxError('Tx Failed: ' + error.message);
+          setTxError('트랜잭션 실패: ' + error.message);
         } else if (error instanceof Timeout) {
-          setTxError('Timeout');
+          setTxError('네트워크 응답 없음');
         } else if (error instanceof TxUnspecifiedError) {
-          setTxError('Unspecified Error: ' + error.message);
+          setTxError('존재하지 않는 트랜잭션 분류 : ' + error.message);
         } else {
           setTxError(
             'Unknown Error: ' +

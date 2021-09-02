@@ -15,6 +15,9 @@ import {
   Link
 } from "react-router-dom";
 
+import DataBindingSample from 'components/react/DataBindingSample';
+import ComponentSample from 'components/react/ComponentSample';
+
 const mainnet = {
   name: 'mainnet',
   chainID: 'columbus-4',
@@ -37,6 +40,12 @@ function App() {
     <main className="container pt-5">
       <Router>
         <Switch>
+          <Route path="/react/components">
+            <ComponentSample />
+          </Route>
+          <Route path="/react/databinding">
+            <DataBindingSample />
+          </Route>
           <Route path="/connect">
             <ConnectSample />
           </Route>

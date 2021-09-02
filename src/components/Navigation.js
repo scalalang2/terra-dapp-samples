@@ -6,7 +6,7 @@ function Navigation() {
     return (
         <div>
             <div className="row">
-                <div className="col-md-8">
+                <div className="col-md-10">
                     <h2>샘플 페이지 내비게이션</h2>
                     <p>테라 DAPP을 개발하기 위한 샘플코드를 만들어 둔 저장소입니다. 아래 메뉴를 통해 다양한 예제를 확인할 수 있습니다.</p>
                     <div class="alert alert-danger" role="alert">
@@ -15,8 +15,17 @@ function Navigation() {
                     </div>
                 </div>
             </div>
-            <div className="row">
+            <div className="row mt-5">
                 <div className="col-md-4">
+                    <h5>리액트 기초</h5>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 15 }}>
+                        <a onClick={() => history.push('/react/components')} className="btn btn-secondary">1. 함수형 컴포넌트</a>
+                        <a onClick={() => history.push('/react/databinding')} className="btn btn-secondary">2. 데이터 바인딩 (카운터)</a>
+                    </div>
+                </div>
+                <div className="col-md-2"></div>
+                <div className="col-md-4">
+                    <h5>리액트 + 테라</h5>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 15 }}>
                         <a onClick={() => history.push('/connect') } className="btn btn-secondary">1. 테라 스테이션 크롬 익스텐션 및 모바일 지갑 연동</a>
                         <a onClick={() => history.push('/query')} className="btn btn-secondary">2. UST, KRW 자산 확인하기</a>
