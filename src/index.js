@@ -6,7 +6,7 @@ import Navigation from 'components/Navigation';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style.css';
+import 'antd/dist/antd.css'
 
 import {
   BrowserRouter as Router,
@@ -15,8 +15,10 @@ import {
   Link
 } from "react-router-dom";
 
-import DataBindingSample from 'components/react/DataBindingSample';
+import CounterSample from 'components/react/CounterSample';
 import ComponentSample from 'components/react/ComponentSample';
+import FormFieldSample from 'components/react/FormFieldSample';
+import TodoListSample from 'components/react/TodoListSample';
 
 const mainnet = {
   name: 'mainnet',
@@ -43,8 +45,14 @@ function App() {
           <Route path="/react/components">
             <ComponentSample />
           </Route>
-          <Route path="/react/databinding">
-            <DataBindingSample />
+          <Route path="/react/counter">
+            <CounterSample />
+          </Route>
+          <Route path="/react/fields">
+            <FormFieldSample />
+          </Route>
+          <Route path="/react/todolist">
+            <TodoListSample />
           </Route>
           <Route path="/connect">
             <ConnectSample />
