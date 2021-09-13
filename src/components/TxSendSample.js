@@ -8,9 +8,11 @@ import {
   useConnectedWallet,
   UserDenied,
 } from '@terra-money/wallet-provider';
+import { Button } from 'antd';
 import React, { useCallback, useState } from 'react';
+import Page from './Page';
 
-const toAddress = 'terra12hnhh5vtyg5juqnzm43970nh4fw42pt27nw9g9';
+const toAddress = 'terra1zy8642kxgd2ezthu63n6e9hfktrec7tk32ff2t';
 
 export default function TxSendSample() {
   const [txResult, setTxResult] = useState(null);
@@ -59,10 +61,9 @@ export default function TxSendSample() {
   }, [connectedWallet]);
 
   return (
-    <div>
-      <h1>Tx Sample</h1>
+    <Page title={'송금하기 예시'}>
       {connectedWallet?.availablePost && !txResult && !txError && (
-        <button type="button" className="btn btn-primary" onClick={send}>Send 1USD to {toAddress}</button>
+        <Button type="default" onClick={send}>Send  1 UST to {toAddress}</Button>
       )}
       {txResult && (
         <>
@@ -73,13 +74,13 @@ export default function TxSendSample() {
       {txError && (
         <>
           <pre>{txError}</pre>
-          <button type="button" className="btn btn-primary" onClick={() => setTxError(null)}>Clear Tx Error</button>
+          <Button type="default" className="btn btn-primary" onClick={() => setTxError(null)} danger>Clear Tx Error</Button>
         </>
       )}
       {!connectedWallet && <p>Wallet not connected!</p>}
       {connectedWallet && !connectedWallet.availablePost && (
         <p>Can not post Tx</p>
       )}
-    </div>
+    </Page>
   );
 }

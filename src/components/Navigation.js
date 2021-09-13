@@ -30,7 +30,7 @@ function Navigation() {
                     <h5>리액트 + 테라</h5>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 15 }}>
                         <Button onClick={() => history.push('/connect') } type="default" size={'large'}>1. 테라 스테이션 크롬 익스텐션 및 모바일 지갑 연동</Button>
-                        <Button onClick={() => history.push('/query')} type="default" size={'large'}>2. UST, KRW 자산 확인하기</Button>
+                        <Button onClick={() => history.push('/query')} type="default" size={'large'}>2. 자산 정보 조회하기</Button>
                         <Button onClick={() => history.push('/send')} type="default" size={'large'}>3. 루나 송금하기</Button>
                         <Button onClick={() => history.push('/swap')} type="default" size={'large'}>4. 루나 &lt;-&gt; UST 발행해보기</Button>
                         <Button onClick={() => history.push('/contract_read')} type="default" size={'large'}>5. CW20 토큰 잔액 확인해보기</Button>

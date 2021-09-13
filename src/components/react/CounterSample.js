@@ -7,7 +7,11 @@ import { useState } from 'react';
  * 2. 여러개의 카운터를 만들어보기
  */
 export default function CounterSample(){
-    let [counter, setCounter] = useState(0);
+    let [counter, setCounter] = useState(1);
+
+    function handleClick() {
+        setCounter(counter + 1)
+    }
 
     return (
         <Page title={"데이터 바인딩 - 카운터 예시"} description={"카운터 프로그램"}>
@@ -17,7 +21,7 @@ export default function CounterSample(){
             <button
                 type="button"
                 className="btn btn-sm btn-primary"
-                onClick={() => setCounter(counter + 1)}>
+                onClick={handleClick}>
                 증가하기
             </button>
         </Page>

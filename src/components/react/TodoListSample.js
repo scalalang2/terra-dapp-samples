@@ -5,12 +5,13 @@ import { MinusCircleOutlined, CheckOutlined } from '@ant-design/icons'
 
 
 export default function TodoListSample() {
+    // 배열 : [작업목록을 담아둘 곳]
+    // 인풋값에서 받는 문자열
     let [todolist, setTodolist] = useState([])
     let [todoName, setTodoName] = useState("")
 
     const handleAddTodo = () => {
-        setTodolist([todoName, ...todolist])
-        console.log(todolist)
+        setTodolist([...todolist, todoName])
     }
 
     return (
